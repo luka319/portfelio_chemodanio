@@ -1,0 +1,18 @@
+﻿
+https://www.slideshare.net/DataGreed/locustio
+============
+
+locust --host http://kakoito.site
+
+
+locust --host http://127.0.0.1:5000
+bad
+
+
+============
+http://127.0.0.1:5000/v1/users/
+
+
+============
+locust --host=http://127.0.0.1:5000
+

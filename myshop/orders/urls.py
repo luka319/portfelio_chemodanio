@@ -1,0 +1,13 @@
+
+from django.conf.urls import url
+from . import views
+
+app_name="orders"
+#app_name="OrderCreate"
+
+urlpatterns = [
+    url(r'^create/$', views.OrderCreate, name='OrderCreate'),
+    url(r'^admin/order/(?P<order_id>\d+)/$', views.AdminOrderDetail, name='AdminOrderDetail'),
+
+]
+

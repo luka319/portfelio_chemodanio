@@ -1,0 +1,1 @@
+D:\Niko\pyclones_\pyclone37v01\Scripts\python.exe %*

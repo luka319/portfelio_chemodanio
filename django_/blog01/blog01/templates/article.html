@@ -1,0 +1,40 @@
+
+<meta charset=utf-8>
+
+
+<h1> Articles !!! </h1><hr>
+
+<table width=100%>
+   <tr>
+      <td colspan="3">
+        Список статей 
+      </td>
+   </tr>
+</table>
+
+   {% for pp in article %}
+
+   <table>
+   <tr valign="top">
+      <td width=20%>
+          <li> Name: {{ pp.name }} </li>
+          <li> id: {{ pp.id }} </li>
+          <li> Опубликовано: {{ pp.is_published }} </li>
+ 
+      </td>
+   
+      <td width=80%>
+          <li style="color:red;"> Text: {{ pp.text01 }} </li>
+          <li> id: {{ pp.id }} </li>
+          <li style="color:green;"> Опубликовано: {{ pp.is_published }} </li>
+      </td>
+    </tr>
+
+   </table>
+   <hr>
+
+   {% endfor %}
+
+
+
+

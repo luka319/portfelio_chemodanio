@@ -1,0 +1,26 @@
+aliases:  #последовательность настроек
+ - &myAlias1
+   datakey: dataval 1
+   moredata: morevals 1
+ - &myAlias2
+   datakey: dataval 2
+   moredata: morevals 2
+config:
+ - *myAlias1  # *myAlias1 после парсинга будет заменен на [{"datakey": "dataval 1", "moredata": "morevals 1"}]
+
+- triangles
+    длинна_стороны: 70
+    кол_во_сторон: 5   
+    цвет: "red"        
+    закраска: 0        
+- squares
+    длинна_стороны: 70 
+    кол_во_сторон: 5   
+    цвет: "red"        
+    закраска: 0        
+- polygons
+    длинна_стороны: 70 
+    кол_во_сторон: 5   
+    цвет: "red"        
+    закраска: 0        
+

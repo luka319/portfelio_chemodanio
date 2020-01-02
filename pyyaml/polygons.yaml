@@ -1,0 +1,23 @@
+figure:     Polygons
+date:       2019-11-11
+customer:
+    first_name:   Nikolay
+    family_name:  Dimov
+coding: 1251
+
+triangles:
+    - длинна_стороны: 70
+      кол_во_сторон:  3
+      цвет:           "red"        
+      закраска:       0        
+squares:
+    - длинна_стороны: 70 
+      кол_во_сторон: 4   
+      цвет: "red"        
+      закраска: 0        
+polygons:
+    - длинна_стороны: 70 
+      кол_во_сторон: 5   
+      цвет: "red"        
+      закраска: 0        
+

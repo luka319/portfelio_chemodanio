@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <title> изображения, Bootstrap </title>
+
+  <link rel="stylesheet" href="/static/css/bootstrap.css">
+
+
+  <style>
+
+      p { font-size: 24px; }
+
+
+
+    [class*="col-"] {
+
+          background-color: #ee3;
+          border-right: 2px solid #fff;
+          text-align: center;
+          padding-top: 15px;
+          padding-bottom: 15px;
+          font-size: 2rem;
+
+          border-color: red;
+
+    }
+
+
+
+  </style>
+
+</head>
+
+<body>
+    <h1> изображения, Bootstrap  </h1>
+       
+    <div class="container">
+    
+        <div class="row">
+
+          <div class="col-xs-4"> 
+              <img src="/static/img/cat_01.jpg" alg="котенок" class="img-circle img-responsive">
+          </div>
+
+          <div class="col-xs-8">Настоящий котик. 
+               в круге, на фотографии, пушистый.
+          </div>
+       
+
+        </div> <!-- row -->
+    </div> <!-- container -->
+
+
+    <iframe src="/iframe1" width="400" height="260" align="left">
+           Ваш браузер не поддерживает встроенные фреймы!
+    </iframe>
+
+
+    <iframe src="/iframe2" width="400" height="260" align="right">
+           Ваш браузер не поддерживает встроенные фреймы!
+    </iframe>
+
+
+<h1 id=two onclick=myfunc()> нажми же меня </h1>
+
+<script>
+
+     function myfunc(){
+
+          alert(' я алерт из основного файла index приложения iframe ');
+     }
+
+
+
+</script>
+
+
+
+    <script src="/static/js_jquery/jquery-1.12.0.js"></script> 
+    <script src="/static/js/bootstrap.js"></script>       
+
+  
+</body>
+</html>

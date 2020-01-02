@@ -1,0 +1,8 @@
+﻿
+1)  sqlite3.exe one03.db < one_01.sql 
+
+2)  pip install openpyxl
+
+3)  python "Loans_openpyxl(4).py"
+
+

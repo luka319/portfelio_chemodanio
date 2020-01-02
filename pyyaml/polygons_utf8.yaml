@@ -1,0 +1,34 @@
+figure:     Polygons
+date:       2019-11-11
+customer:
+    first_name:   Dorothy
+    family_name:  Gale
+
+items:
+    - part_no:   A4786
+      descrip:   Water Bucket (Filled)
+      price:     1.47
+      quantity:  4
+
+    - part_no:   E1628
+      descrip:   High Heeled "Ruby" Slippers
+      size:      8
+      price:     133.7
+      quantity:  1
+
+triangles:
+    - длинна_стороны: 70
+      кол_во_сторон:  5   
+      цвет:           "red"        
+      закраска:       0        
+squares:
+    - длинна_стороны: 70 
+      кол_во_сторон: 5   
+      цвет: "red"        
+      закраска: 0        
+polygons:
+    - длинна_стороны: 70 
+      кол_во_сторон: 5   
+      цвет: "red"        
+      закраска: 0        
+

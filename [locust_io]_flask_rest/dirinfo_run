@@ -1,0 +1,10 @@
+﻿
+https://locust.io/
+=====================
+
+locust_.bat -f locustfile.py  --host=http://127.0.0.1:8000
+
+locust_.bat -f locustfile_dj_counter.py --host=http://127.0.0.1:8000
+
+locust_.bat -f locustfile_dj_counter.py --host=http://127.0.0.1:2015
+

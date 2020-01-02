@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Django Forms 3</title>
+
+    <style>
+    .alert {color: red}
+    .form-group {margin: 10px 0;}
+    .form-group input {width:250px;
+        height: 25px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+     }
+    .field {
+        font-weight: bold;
+    }
+    .error {
+        color: red;
+    }
+
+    /* for form4 */
+    .myfield {
+
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        height: 25px;
+        width: 200px;
+        margin: 10px 10px 10px 0;
+    }
+    </style>
+</head>
+<body class="container">
+
+<form method="POST">
+        {% csrf_token %}
+        <div>
+        {% for field in form %}
+        <div class="row">
+            {{field.label_tag}}
+            <div class="col-md-10">{{field}}</div>
+        </div>
+        {% endfor %}
+        </div>
+        <input type="submit" value="Send" >
+    </form>
+
+
+
+<form method="POST" novalidate>
+        {% csrf_token %}
+        <div>
+        {% for field in form %}
+        <div class="row">
+            {{field.label_tag}}
+            <div class="col-md-10">{{field}}</div>
+            {% if field.errors%}
+            <div class="error">{{field.errors}}</div>
+            {% endif %}
+        </div>
+        {% endfor %}
+        </div>
+        <input type="submit" value="Send" >
+    </form>
+
+
+
+
+<form action="" method="post" novalidate>
+    {% csrf_token %}
+    <div>
+        {% for field in form %}
+        <div class="form-group">
+            {{ field.label_tag }}
+            <div>{{ field }}</div>
+            {%  if field.errors %}
+               {%  for error in field.errors %}
+                    <div class="alert alert-danger">
+                    {{ error }}
+
+                    </div>
+                {% endfor %}
+            {%  endif %}
+        </div>
+        {%  endfor %}
+    </div>
+    <input type="submit" value="Послать">
+
+</form>
+
+
+<hr>
+
+   <form method="post">
+     {%  csrf_token %}
+
+   <table border="2">
+       {{ form }}
+   </table>
+   <input type="submit" value="Послать">
+   </form>
+
+   {# ======================================================== #}
+
+  <h2>as_table</h2>
+<form method="POST">
+    {% csrf_token %}
+    <table>
+    {{ form.as_table }}
+    </table>
+    <input type="submit" value="Send" >
+</form>
+<h2>as_ul</h2>
+<form method="POST">
+    {% csrf_token %}
+    <ul>
+    {{ form.as_ul }}
+    </ul>
+    <input type="submit" value="Send" >
+</form>
+<h2>as_p</h2>
+
+<form method="POST">
+    {% csrf_token %}
+    <div>
+    {{ form.as_p }}
+    </div>
+    <input type="submit" value="Send" >
+</form>
+
+
+</body>
+</html>

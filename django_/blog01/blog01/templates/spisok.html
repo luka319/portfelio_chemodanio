@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <meta charset=utf-8>
+
+     <style>
+
+        button#here A:link , 
+        button#there A:link, 
+         input#there A:link {
+              text-decoration: none; /* Убирает подчеркивание для ссылок */
+           } 
+
+          button#here A:visited,
+          button#there A:visited,
+           input#there A:visited { text-decoration: none; } 
+
+
+          button#here  A:active,
+          button#there A:active,
+           input#there A:active { text-decoration: none; }
+
+          button#here  A:hover,
+          button#there A:hover,
+          input#there A:hover {
+    text-decoration: underline; /* Делает ссылку подчеркнутой при наведении на нее курсора */
+    color: red; /* Цвет ссылки */
+    background-color: cyan;
+            } 
+
+
+
+     </style>
+</head>
+
+<body>
+<h1 style="color:red;">  
+  Шаблон spisok.html 
+</h1>
+
+{% load staticfiles %}
+
+<h1> Список статей  </h1><hr>
+
+<table width=100%>
+   <tr>
+      <td colspan="3">
+        Список статей 
+      </td>
+   </tr>
+</table>
+
+<div id=vot_eto>
+
+   {% for pp in article %}
+
+   <table>
+   <tr valign="top">
+      <td width=20%>
+          <li> Name: {{ pp.name }} </li>
+ 
+      </td>
+   
+      <td width=80%>
+          <li style="color:green;"> Опубликовано: {{ pp.is_published }} </li>
+      </td>
+    </tr>
+
+   </table>
+   <hr>
+
+   {% endfor %}
+
+</div> <!-- <div id=vot_eto>  -->
+
+{# ================================================= #}
+{# номера страниц !!! #}
+
+<div class="pagination">
+    <span class="step-links">
+        {% if article.has_previous %}
+            <a href="?page={{ article.previous_page_number }}"> предыдущая </a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ article.number }} of {{ article.paginator.num_pages }}.
+        </span>
+
+        {% if article.has_next %}
+            <a href="?page={{ article.next_page_number }}"> следующая </a>
+        {% endif %}
+    </span>
+</div>
+
+
+{# =================================================== #}
+
+
+<br>
+<hr>
+
+
+<table>
+<tr>
+
+  <td width=100px;>
+ {% if article.has_previous %}
+
+   <button id="here"><a href="?page={{ article.previous_page_number }}">
+        ← &nbsp  сюда 
+                     </a>
+   </button>
+
+ {% endif %}
+  
+  </td>
+  <td>
+
+ {% if article.has_next %}
+
+
+   <button id="there"><a href="?page={{ article.next_page_number }}">
+             туда &nbsp →  
+                     </a>
+   </button>
+
+
+ {% endif %}
+   </td>
+</tr>
+</table>
+
+{# ================ N2 ============================ #}
+
+дальше - jQuery
+<script src="{% static "js/jquery-2.2.3.js" %}">
+</script>
+
+<script src="{% static "js/my_jquery_get.js" %}">
+</script>
+
+
+<br>
+<hr>
+   <div id="results" style="border: 7px solid red";>    
+   сюда оно будет писать
+
+   </div>
+
+<hr>
+
+<div class="pagination">
+
+        {% if article.has_next %}
+
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+ <button id="dobavka" style="outline: 4px dotted green;"> добавить </button>
+
+
+<div id="prev_2" style="background-color:cyan; border: 3px solid red; width=30px; height=20px;"> 
+&nbsp;  есть - добавил !
+</div>
+            
+        {% endif %}
+
+
+</div>
+
+
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Django Forms </title>
+</head>
+<body>
+
+<form action="" method="post" novalidate>
+    {% csrf_token %}
+    <div>
+        {% for field in form %}
+        <div class="form-group">
+            {{ field.label_tag }}
+            <div>{{ field }}</div>
+            <div class="erroe">
+                {#     {{  field.errors }} #}
+                {%  for error in field.errors %}
+                    <div class="alert alert-danger">
+                    {{ error }}
+
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        {%  endfor %}
+
+    </div>
+    <input type="submit" value="Послать">
+
+</form>
+
+
+<hr>
+
+   <form method="post">
+     {%  csrf_token %}
+
+   <table border="2">
+       {{ form }}
+   </table>
+   <input type="submit" value="Послать">
+   </form>
+
+   {# ======================================================== #}
+
+  <h2>as_table</h2>
+<form method="POST">
+    {% csrf_token %}
+    <table>
+    {{ form.as_table }}
+    </table>
+    <input type="submit" value="Send" >
+</form>
+<h2>as_ul</h2>
+<form method="POST">
+    {% csrf_token %}
+    <ul>
+    {{ form.as_ul }}
+    </ul>
+    <input type="submit" value="Send" >
+</form>
+<h2>as_p</h2>
+
+<form method="POST">
+    {% csrf_token %}
+    <div>
+    {{ form.as_p }}
+    </div>
+    <input type="submit" value="Send" >
+</form>
+
+
+</body>
+</html>

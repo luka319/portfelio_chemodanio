@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1> Hello from django! </h1>
+
+ <h2>{{ header }}</h2>
+ <p>{{ message }}</p>
+<hr>
+
+    <h1>{{ header }}</h1>
+    <p>Name: {{ user.name}} Age: {{user.age}}</p>
+    <p>Address: ул. {{address.0}}, д. {{address.1}}, кв. {{address.2}}</p>
+    <p>Langs: {{langs.0}}, {{langs.1}}</p>
+
+    <img src="{% static "images/kamni.jpg" %}" alt="Stones along the river" >
+
+</body>
+</html>

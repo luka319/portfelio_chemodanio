@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+     <h1>About</h1>
+
+ <h1>{{ header987 }}</h1>
+
+
+<p>{% now "Y" %}</p>
+<p>{% now "F j Y" %}</p>
+<p>{% now "N, j, Y" %}</p>
+<p>{% now "N j, Y, P" %}</p>
+
+<hr>
+
+{% with name="Tom" age=29 bom="Bim" vozrast=50 %}
+    <div>
+        <p>Name: {{ name }}</p>
+        <p>Age: {{ age }}</p>
+        <h1>Name: {{ bom }}</h1>
+        <h1>Age: {{ vozrast }}</h1>
+    </div>
+{% endwith %}
+
+
+</body>
+</html>
